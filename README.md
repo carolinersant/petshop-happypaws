@@ -1,60 +1,72 @@
 # PetShop HappyPaws
 
-Bem-vindo ao **PetShop HappyPaws**, um sistema web desenvolvido para gerenciamento de produtos, serviços e agendamentos de um petshop. Este projeto foi desenvolvido como parte da disciplina de Fundamentos de Sistemas Web
-, utilizando HTML, CSS/Bootstrap e JavaScript.
+Bem-vindo ao **PetShop HappyPaws**, um site desenvolvido como projeto da disciplina de Fundamentos de Sistemas Web
+. Este sistema web apresenta funcionalidades completas para um petshop moderno, incluindo exibição de produtos, serviços, cadastro de clientes e pets, além de agendamento de serviços.
 
 ---
 
-## 🔹 Funcionalidades do Projeto
+## 🖥️ Funcionalidades do Site
 
-O site do PetShop HappyPaws possui as seguintes funcionalidades:
+1. **Home / Página Inicial**
+   - Carrossel de imagens destacando o petshop e seus serviços.
+   - Design responsivo e moderno com cores vibrantes e atraentes.
 
-### 1. Home
-- Carrossel de imagens com destaque para pets e serviços.
-- Exibição de hora e data em tempo real.
+2. **Serviços**
+   - Banho & Tosa
+   - Consulta Veterinária
+   - Hospedagem
+   - Cada serviço possui botão de agendamento que direciona para o formulário de cadastro.
 
-### 2. Serviços
-- Listagem dos principais serviços do petshop:
-  - Banho & Tosa
-  - Consulta Veterinária
-  - Hospedagem
-- Cada serviço contém descrição, preço e botão para agendamento.
+3. **Produtos**
+   - Exibição de produtos em carrossel com imagens, nomes, preços e botão de compra.
+   - Produtos incluem brinquedos, rações, acessórios e mais.
 
-### 3. Produtos
-- Carrossel de produtos divididos em slides.
-- Exemplo de produtos: brinquedos, rações, coleiras e comedouros.
-- Cada produto possui foto, descrição, preço (com desconto) e botão “Comprar”.
+4. **Cadastro & Agendamento**
+   - Formulário para registrar **informações do cliente** (nome, endereço, CPF, telefone, e-mail, sexo).
+   - Formulário para registrar **informações do pet** (nome, raça, idade).
+   - Seleção de **serviço desejado** e **método de agendamento** (tele-busca ou entrega no local).
+   - Escolha de **data e horário** para o serviço.
+   - Validação de formulário com mensagens de alerta para campos obrigatórios.
 
-### 4. Cadastro e Agendamento
-- Formulário completo para cadastro de clientes e pets.
-- Campos para:
-  - Nome, endereço, CPF, telefone, e-mail e sexo do cliente.
-  - Nome, raça e idade do pet.
-  - Serviço desejado e método de agendamento (tele-busca ou entrega).
-  - Seleção de data e horário para agendamento.
-- Validação do formulário usando JavaScript e Bootstrap.
+5. **Contato**
+   - Formulário de contato para dúvidas ou informações adicionais.
+   - Campos: Nome, E-mail, Telefone e Mensagem.
 
-### 5. Contato
-- Formulário de contato com campos de nome, e-mail, telefone e mensagem.
-
-### 6. Footer
-- Contatos, links para redes sociais e navegação rápida (Início, Produtos, Serviços, Contato).
-
-### 7. Acessibilidade
-- Uso de atributos `alt` em todas as imagens para audiodescrição.
-- Formulários com labels claros.
+6. **Rodapé**
+   - Links de navegação rápidos (Início, Serviços, Produtos, Cadastro, Contato)
+   - Informações de contato
+   - Ícones de redes sociais
 
 ---
 
-## 🔹 Tecnologias Utilizadas
+## ⚙️ Tecnologias Utilizadas
 
-- HTML5
-- CSS3 e Bootstrap 5
-- JavaScript (validação de formulários e hora dinâmica)
-- Font Awesome (ícones)
-- Git & GitHub (controle de versão e publicação)
+- **HTML5**: Estrutura do site
+- **CSS3 / Bootstrap 5**: Estilização e carrossel
+- **JavaScript**: Função de atualização da hora e validação de formulário
+- **Git & GitHub**: Versionamento do código
+- **GitHub Pages**: Hospedagem do site
 
 ---
 
-## 🔹 Estrutura do Projeto
+## 🌐 Link para o Site Online
+
+O site está hospedado pelo **GitHub Pages**:
+
+[PetShop HappyPaws Online](https://carolinersant.github.io/petshop-happypaws/)
+
+---
+
+
+---
+
+## 📝 Observações
+
+- O site é **responsivo** e acessível, utilizando atributos `alt` para imagens.
+- Todas as funcionalidades do formulário são **simuladas** (não há backend de envio real).
+- Projeto desenvolvido como **atividade acadêmica**.
+
+---
+
+
 

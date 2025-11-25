@@ -1,0 +1,483 @@
+:root {
+  --primary-color: #6e1fc8;
+  --secondary-color: #ebf4f5;
+  --dark-color: #000000;
+  --white-color: #ffffff;
+  --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+
+  --accent-orange: #d8830b; /* laranja principal */
+  --accent-orange-dark: #c3700a; /* laranja escuro para hover */
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  transition: all 0.2s linear;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+  overflow-x: hidden;
+  scroll-padding-top: 7rem;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--secondary-color);
+}
+
+section {
+  padding: 2rem 9%;
+}
+
+.heading {
+  text-align: center;
+  padding: 2.5rem 0;
+  font-size: 3.5rem;
+  color: var(--dark-color);
+  margin-bottom: 2rem;
+}
+
+.heading i {
+  color: var(--primary-color);
+}
+
+/* Botão Padrão */
+/* Botão padrão agora é LARANJA */
+.btn {
+  display: inline-block;
+  padding: 0.9rem 3rem;
+  border-radius: 0.5rem;
+  color: var(--white-color);
+  background: var(--accent-orange);
+  font-size: 1.7rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  text-transform: capitalize;
+  border: none;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background: var(--accent-orange-dark);
+  color: var(--white-color);
+}
+
+/* ======================================================= */
+/* HEADER (Topo, Logo, Navegação e Hora Dinâmica) */
+/* ======================================================= */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--white-color);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 9%;
+  text-decoration: none;
+}
+
+header .logo {
+  font-size: 2.5rem;
+  font-weight: bolder;
+  color: var(--dark-color);
+  text-decoration: none;
+}
+
+header .logo i {
+  color: var(--primary-color);
+  padding-right: 0.5rem;
+}
+
+header .navbar a {
+  font-size: 1.7rem;
+  margin: 0 1rem;
+  color: var(--dark-color);
+  text-decoration: none;
+}
+
+header .navbar a:hover {
+  color: var(--primary-color);
+}
+
+/* Estilo para o elemento da hora dinâmica (JS) */
+header .time-display {
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 0 1rem;
+  white-space: nowrap; /* Garante que não quebre a linha */
+}
+
+/* ======================================================= */
+/* HOME (Seção Inicial) */
+/* ======================================================= */
+.home {
+  /* Define a altura mínima como 100% da altura visível da tela (Viewport Height) */
+  min-height: 80vh;
+
+  /* Remove o padding padrão da seção para que o conteúdo (carrossel) preencha tudo */
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  background: none; /* Mantém o background vazio se estiver usando o carrossel */
+}
+
+/* Estilos de carrossel da HOME (reutilizado do ajuste de tamanho) */
+.home .carousel,
+.home .carousel-inner,
+.home .carousel-item {
+  height: 60vh;
+}
+
+.home .carousel-item img {
+  height: 50vh;
+  object-fit: cover;
+}
+
+/* ======================================================= */
+/* SERVIÇOS (CATEGORY) */
+/* ======================================================= */
+
+/* Ajuste para o título que imita a imagem */
+.category .section-title {
+  text-align: center;
+  font-size: 3.5rem;
+  color: var(--dark-color);
+  margin-bottom: 5rem;
+  font-weight: 500;
+}
+
+/* Estilos de compatibilidade (remover se não usar mais img/h4 na categoria) */
+.category img {
+  height: 15rem;
+  width: 15rem;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.category h4 {
+  font-size: 2rem;
+  color: var(--dark-color);
+  margin-bottom: 1rem;
+}
+
+/* ======================================================= */
+/* ESTILO DOS CARDS DE SERVIÇO (AGORA FORA DA MEDIA QUERY) */
+/* ======================================================= */
+.category .service-card {
+  /* Cor de fundo e sombra que dá profundidade */
+  background: var(--white-color);
+  border-radius: 0.8rem; /* Borda um pouco mais arredondada */
+  box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.1); /* Sombra mais destacada */
+
+  /* Tamanho interno e alinhamento */
+  padding: 4rem 2.5rem; /* Aumenta o padding interno para ficar mais alto */
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Container do Ícone (o círculo) */
+.category .service-card .icon-box {
+  margin: 0 auto 2rem;
+  width: 7rem; /* Tamanho do círculo */
+  height: 7rem;
+  border-radius: 50%;
+  /* Fundo branco e borda que imita a imagem: */
+  background-color: var(--white-color);
+  border: 2px solid var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* O Ícone em si */
+.category .service-card .icon-box i {
+  font-size: 3.5rem;
+  color: var(--primary-color); /* Cor principal do seu petshop */
+}
+
+/* Título (Banho & Tosa, etc.) */
+.category .service-card h3 {
+  font-size: 2.2rem;
+  color: var(--dark-color);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+/* Destaque do Preço */
+.category .service-card .price {
+  font-size: 2.2rem;
+  color: var(--primary-color); /* Destaque com a cor principal */
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+/* Parágrafo de descrição */
+.category .service-card p {
+  font-size: 1.5rem;
+  color: #666;
+  margin-bottom: 2.5rem;
+  flex-grow: 1;
+  line-height: 1.6;
+}
+
+/* Botão (Para garantir a cor amarela/laranja do seu modelo) */
+/* O seu botão .btn padrão é azul, vamos sobrescrever apenas nesta seção se necessário, mas o código original está como primary-color */
+.category .service-card .btn {
+  background-color: #d8830b;
+  color: var(--white-color);
+  font-weight: 600;
+  padding: 1rem 3rem;
+}
+.category .service-card .btn:hover {
+  background-color: #37b7c3;
+}
+/* FIM DOS ESTILOS DOS CARDS DE SERVIÇO */
+
+/* ======================================================= */
+/* PRODUTOS (CARROSSEL) */
+/* ======================================================= */
+.products {
+  background: var(--white-color);
+}
+
+/* Estilo para os cards de produto */
+.products .card {
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow);
+  border-radius: 0.5rem;
+  max-width: 25rem;
+}
+
+.products .card img {
+  height: 20rem;
+  object-fit: contain;
+  padding: 1rem;
+}
+
+.products .card-title {
+  color: var(--dark-color);
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.products .card-text {
+  font-size: 1.6rem;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.products .card-text span {
+  font-size: 1.4rem;
+  color: #999;
+  font-weight: normal;
+}
+
+/* Estilo para as setas do carrossel */
+.products .carousel-control-prev-icon,
+.products .carousel-control-next-icon {
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  padding: 2rem;
+}
+
+/* ======================================================= */
+/* CADASTRO & AGENDAMENTO (OFFER) */
+/* ======================================================= */
+.offer {
+  background: var(--secondary-color);
+}
+
+.offer form {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 3rem;
+  border-radius: 0.5rem;
+  background: var(--white-color);
+  box-shadow: var(--box-shadow);
+}
+
+.offer form h3 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--dark-color);
+  padding-bottom: 1rem;
+  border-bottom: 0.2rem solid var(--primary-color);
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+}
+
+.offer form h3:first-child {
+  margin-top: 0;
+}
+
+.offer form input,
+.offer form select {
+  width: 100%;
+  padding: 1.2rem 1.4rem;
+  font-size: 1.6rem;
+  color: var(--dark-color);
+  margin: 0.7rem 0;
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+}
+
+.offer form label {
+  display: block;
+  font-size: 1.6rem;
+  color: var(--dark-color);
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+/* Estilo para agrupar os radio buttons (SEXO, SERVIÇO, MÉTODO) */
+.offer form fieldset {
+  border: none;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.offer form fieldset legend {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--dark-color);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.offer form .radio-group {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.offer form .radio-group input[type="radio"] {
+  width: auto;
+  margin-right: 0.5rem;
+}
+
+.offer form .radio-group label {
+  margin: 0;
+  font-weight: normal;
+}
+
+/* Estilo de validação do Bootstrap */
+.offer form input:invalid:not(:placeholder-shown),
+.offer form select:invalid:not(:placeholder-shown) {
+  border-color: red;
+}
+
+/* ======================================================= */
+/* CONTATO */
+/* ======================================================= */
+.contact form {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 3rem;
+  border-radius: 0.5rem;
+  background: var(--white-color);
+  box-shadow: var(--box-shadow);
+}
+
+.contact form input,
+.contact form textarea {
+  width: 100%;
+  padding: 1.2rem 1.4rem;
+  font-size: 1.6rem;
+  color: var(--dark-color);
+  margin: 0.7rem 0;
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+}
+
+.contact form textarea {
+  height: 15rem;
+  resize: none;
+}
+
+/* ======================================================= */
+/* FOOTER */
+/* ======================================================= */
+footer {
+  text-align: center;
+  padding: 2.5rem 9%;
+  border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+  background: var(--white-color);
+}
+
+footer .share .btn {
+  margin: 0.3rem;
+}
+
+footer p {
+  font-size: 1.6rem;
+  color: var(--dark-color);
+  padding-top: 1.5rem;
+}
+footer .footer-links {
+  margin-bottom: 1.5rem;
+}
+
+footer .footer-links a {
+  font-size: 1.6rem;
+  margin: 0 1rem;
+  color: var(--dark-color);  /* cor normal */
+  text-decoration: none;     /* sem sublinhado */
+  font-weight: 400;          /* peso normal */
+}
+
+footer .footer-links a:hover {
+  color: var(--accent-orange); /* cor sutil ao passar o mouse */
+}
+
+
+
+/* ======================================================= */
+/* MEDIA QUERIES (Responsividade) */
+/* ======================================================= */
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+  header {
+    padding: 1.5rem 2rem;
+  }
+  section {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  header .navbar {
+    display: none; /* Esconder a nav bar em telas menores se você não tiver um menu toggle (hamburguer) */
+  }
+  .home .container h1 {
+    font-size: 4rem;
+  }
+  header .time-display {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+  .heading {
+    font-size: 3rem;
+  }
+}

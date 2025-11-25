@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>PetShop HappyPaws</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="#home" class="logo"
+        ><i class="fa-solid fa-dog" aria-hidden="true"></i> PetShop HappyPaws</a
+      >
+      <nav class="navbar">
+        <a href="#home">Início</a>
+        <a href="#category">Serviços</a>
+        <a href="#products">Produtos</a>
+        <a href="#cadastro">Cadastro</a>
+        <a href="#contact">Contato</a>
+      </nav>
+      <div id="horaAtual" class="time-display"></div>
+    </header>
+
+    <section class="home" id="home">
+      <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#homeCarousel"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#homeCarousel"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#homeCarousel"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="assets/home-slide1.png"
+              class="d-block w-100"
+              alt="Cachorro feliz e bem cuidado no Pet Shop"
+            />
+            <div class="carousel-caption d-none d-md-block"></div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="assets/home-slide2.png"
+              class="d-block w-100"
+              alt="Gato relaxando após um banho no Pet Shop"
+            />
+            <div class="carousel-caption d-none d-md-block"></div>
+          </div>
+          
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#homeCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#homeCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Próximo</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="category" id="category">
+      <h1 class="heading">
+        <i class="fas fa-paw" aria-hidden="true"></i> Serviços
+        <i class="fas fa-paw" aria-hidden="true"></i>
+      </h1>
+
+      <div class="row text-center justify-content-center">
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="service-card">
+            <div class="icon-box">
+              <i class="fa-solid fa-scissors"></i>
+            </div>
+            <h3>Banho & Tosa</h3>
+            <div class="price">A partir de R$ 60,00</div>
+            <p>
+              Pacotes de higienização, banho com produtos neutros e tosa
+              profissional para o conforto do seu pet.
+            </p>
+            <a href="#cadastro" class="btn">Agendar</a>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="service-card">
+            <div class="icon-box">
+              <i class="fa-solid fa-stethoscope"></i>
+            </div>
+            <h3>Consulta Veterinária</h3>
+            <div class="price">R$ 120,00</div>
+            <p>
+              Atendimento clínico, vacinas e check-ups preventivos para garantir
+              que seu pet está saudável.
+            </p>
+            <a href="#cadastro" class="btn">Agendar</a>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="service-card">
+            <div class="icon-box">
+              <i class="fa-solid fa-house-chimney-medical"></i>
+            </div>
+            <h3>Hospedagem</h3>
+            <div class="price">Diária a partir de R$ 80,00</div>
+            <p>
+              Seu pet em um ambiente seguro e divertido! Oferecemos conforto e
+              atividades monitoradas enquanto você viaja.
+            </p>
+            <a href="#cadastro" class="btn">Agendar</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="products" id="products">
+  <h1 class="heading">
+    <i class="fas fa-paw"></i> Produtos <i class="fas fa-paw"></i>
+  </h1>
+
+  <div id="carouselProdutos" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <div class="d-flex justify-content-center gap-4 flex-wrap">
+
+          <!-- Produto 1 -->
+          <div class="card" style="width: 15rem">
+            <img src="assets/brinquedo1.jpg" class="d-block w-100" alt="Bola de borracha para Pet." />
+            <div class="card-body text-center">
+              <h5 class="card-title">Bola de borracha para Pet</h5>
+              <p class="card-text">R$67,72 <span style="text-decoration: line-through">R$79,90</span></p>
+              <a href="#cadastro" class="btn">Comprar</a>
+            </div>
+          </div>
+
+          <!-- Produto 2 -->
+          <div class="card" style="width: 15rem">
+            <img src="assets/brinquedo2.jpg" class="d-block w-100" alt="Corda trançada colorida." />
+            <div class="card-body text-center">
+              <h5 class="card-title">Corda trançada colorida</h5>
+              <p class="card-text">R$37,19 <span style="text-decoration: line-through">R$49,99</span></p>
+              <a href="#cadastro" class="btn">Comprar</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <div class="d-flex justify-content-center gap-4 flex-wrap">
+
+          <!-- Produto 3 -->
+          <div class="card" style="width: 15rem">
+            <img src="assets/racao1.jpg" class="d-block w-100" alt="Ração para cães adultos." />
+            <div class="card-body text-center">
+              <h5 class="card-title">Ração Premium Frost Cães Adultos</h5>
+              <p class="card-text">R$121,99</p>
+              <a href="#cadastro" class="btn">Comprar</a>
+            </div>
+          </div>
+
+          <!-- Produto 4 -->
+          <div class="card" style="width: 15rem">
+            <img src="assets/racao2.jpg" class="d-block w-100" alt="Ração para gatos adultos." />
+            <div class="card-body text-center">
+              <h5 class="card-title">Ração Premium Frost Gatos Adultos</h5>
+              <p class="card-text">R$111,41</p>
+              <a href="#cadastro" class="btn">Comprar</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Slide 3 (NOVOS PRODUTOS) -->
+      <div class="carousel-item">
+        <div class="d-flex justify-content-center gap-4 flex-wrap">
+
+          <!-- Produto 5 -->
+          <div class="card" style="width: 15rem">
+            <img src="assets/coleira.jpg" class="d-block w-100" alt="Coleira ajustável ." />
+            <div class="card-body text-center">
+              <h5 class="card-title">Coleira Ajustável </h5>
+              <p class="card-text">R$29,90</p>
+              <a href="#cadastro" class="btn">Comprar</a>
+            </div>
+          </div>
+
+          <!-- Produto 6 -->
+          <div class="card" style="width: 15rem">
+            <img src="assets/comedouro.jpg" class="d-block w-100" alt="Comedouro duplo inox." />
+            <div class="card-body text-center">
+              <h5 class="card-title">Comedouro duplo inox</h5>
+              <p class="card-text">R$49,99</p>
+              <a href="#cadastro" class="btn">Comprar</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselProdutos" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselProdutos" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+      <span class="visually-hidden">Próximo</span>
+    </button>
+
+  </div>
+</section>
+
+
+    <section class="offer" id="cadastro">
+      <h1 class="heading">
+        <i class="fas fa-paw" aria-hidden="true"></i> Cadastro & Agendamento
+        <i class="fas fa-paw" aria-hidden="true"></i>
+      </h1>
+      <div class="container">
+        <form id="cadastroForm" class="needs-validation" novalidate>
+          <h3>Informações do Cliente</h3>
+
+          <label for="nomeCliente">Nome Completo</label>
+          <input
+            type="text"
+            id="nomeCliente"
+            name="nome"
+            placeholder="Seu nome completo"
+            required
+          />
+
+          <label for="enderecoCliente">Endereço</label>
+          <input
+            type="text"
+            id="enderecoCliente"
+            name="endereco"
+            placeholder="Rua, Número, Bairro"
+            required
+          />
+
+          <label for="cpfCliente">CPF</label>
+          <input
+            type="text"
+            id="cpfCliente"
+            name="cpf"
+            placeholder="000.000.000-00"
+            required
+          />
+
+          <label for="telefoneCliente">Telefone</label>
+          <input
+            type="tel"
+            id="telefoneCliente"
+            name="telefone"
+            placeholder="(XX) XXXXX-XXXX"
+            required
+          />
+
+          <label for="emailCliente">E-mail</label>
+          <input
+            type="email"
+            id="emailCliente"
+            name="email"
+            placeholder="seu.email@exemplo.com"
+            required
+          />
+
+          <fieldset>
+            <legend>Sexo</legend>
+            <div class="radio-group">
+              <input
+                type="radio"
+                id="sexoM"
+                name="sexo"
+                value="masculino"
+                required
+              />
+              <label for="sexoM">Masculino</label>
+              <input type="radio" id="sexoF" name="sexo" value="feminino" />
+              <label for="sexoF">Feminino</label>
+            </div>
+          </fieldset>
+
+          <h3>Informações do Pet</h3>
+
+          <label for="nomePet">Nome do Pet</label>
+          <input
+            type="text"
+            id="nomePet"
+            name="nomePet"
+            placeholder="Nome do seu amigo"
+            required
+          />
+
+          <label for="racaPet">Raça</label>
+          <input
+            type="text"
+            id="racaPet"
+            name="racaPet"
+            placeholder="Ex: Poodle, Persa, Vira-lata"
+            required
+          />
+
+          <label for="idadePet">Idade (anos)</label>
+          <input
+            type="number"
+            id="idadePet"
+            name="idadePet"
+            placeholder="Idade (anos)"
+            min="0"
+            max="30"
+            required
+          />
+
+          <h3>Serviço & Agendamento</h3>
+
+          <fieldset>
+            <legend>Serviço Desejado</legend>
+            <div class="radio-group">
+              <input
+                type="radio"
+                id="servicoBanhoeTosa"
+                name="servico"
+                value="banhoetosa"
+                required
+              />
+              <label for="servicoBanhoeTosa">Banho & Tosa</label>
+              <input
+                type="radio"
+                id="servicoConsulta"
+                name="servico"
+                value="Consulta"
+              />
+              <label for="servicoConsulta">Consulta Veterinária </label>
+              <input
+                type="radio"
+                id="servicoHospedagem"
+                name="servico"
+                value="Hospedagem"
+              />
+              <label for="servicoConsulta">Hospedagem </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Método de Agendamento</legend>
+            <div class="radio-group">
+              <input
+                type="radio"
+                id="metodoBusca"
+                name="metodo"
+                value="tele-busca"
+                required
+              />
+              <label for="metodoBusca">Tele-busca</label>
+              <input
+                type="radio"
+                id="metodoEntrega"
+                name="metodo"
+                value="entrega"
+              />
+              <label for="metodoEntrega">Entrega no local</label>
+            </div>
+          </fieldset>
+
+          <label for="dataAgendamento">Data</label>
+          <input type="date" id="dataAgendamento" name="data" required />
+          <label for="horaAgendamento">Horário</label>
+          <input type="time" id="horaAgendamento" name="hora" required />
+
+          <button type="submit" class="btn">Enviar Cadastro</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <h1 class="heading">
+        <i class="fas fa-paw" aria-hidden="true"></i> Fale Conosco
+        <i class="fas fa-paw" aria-hidden="true"></i>
+      </h1>
+      <form>
+        <label for="nomeContato" class="visually-hidden">Nome</label>
+        <input type="text" id="nomeContato" placeholder="Nome" required />
+
+        <label for="emailContato" class="visually-hidden">E-mail</label>
+        <input type="email" id="emailContato" placeholder="E-mail" required />
+
+        <label for="telefoneContato" class="visually-hidden">Telefone</label>
+        <input type="tel" id="telefoneContato" placeholder="Telefone" />
+
+        <label for="mensagemContato" class="visually-hidden">Mensagem</label>
+        <textarea
+          id="mensagemContato"
+          placeholder="Mensagem"
+          required
+        ></textarea>
+
+        <button type="submit" class="btn">Enviar Mensagem</button>
+      </form>
+    </section>
+
+    <footer>
+  <div class="container">
+
+    <!-- Links do rodapé (igual menu superior) -->
+    <nav class="footer-links">
+      <a href="#home">Início</a>
+      <a href="#products">Produtos</a>
+      <a href="#category">Serviços</a>
+      <a href="#contact">Contato</a>
+    </nav>
+
+    <!-- Linha divisória -->
+    <hr style="margin: 2rem auto; max-width: 300px; border: 0.1rem solid rgba(0,0,0,0.1);">
+
+    <!-- Informações -->
+    <p>© 2025 PetShop HappyPaws | Desenvolvido por Caroline</p>
+    <p>Contato: (51) 99999-9999 | happypawspetshop@gmail.com</p>
+
+  </div>
+</footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>

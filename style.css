@@ -121,27 +121,21 @@ header .time-display {
 /* HOME (Seção Inicial) */
 /* ======================================================= */
 .home {
-  /* Define a altura mínima como 100% da altura visível da tela (Viewport Height) */
-  min-height: 80vh;
-
-  /* Remove o padding padrão da seção para que o conteúdo (carrossel) preencha tudo */
   padding: 0;
-
-  display: flex;
-  align-items: center;
-  background: none; /* Mantém o background vazio se estiver usando o carrossel */
+  margin-top: 9rem; /* para afastar do header fixo */
 }
 
-/* Estilos de carrossel da HOME (reutilizado do ajuste de tamanho) */
 .home .carousel,
 .home .carousel-inner,
 .home .carousel-item {
-  height: 60vh;
+  height: auto;
 }
 
 .home .carousel-item img {
-  height: 50vh;
+  width: 100%;
+  height: auto;
   object-fit: cover;
+  display: block;
 }
 
 /* ======================================================= */
@@ -435,16 +429,14 @@ footer .footer-links {
 footer .footer-links a {
   font-size: 1.6rem;
   margin: 0 1rem;
-  color: var(--dark-color);  /* cor normal */
-  text-decoration: none;     /* sem sublinhado */
-  font-weight: 400;          /* peso normal */
+  color: var(--dark-color); /* cor normal */
+  text-decoration: none; /* sem sublinhado */
+  font-weight: 400; /* peso normal */
 }
 
 footer .footer-links a:hover {
   color: var(--accent-orange); /* cor sutil ao passar o mouse */
 }
-
-
 
 /* ======================================================= */
 /* MEDIA QUERIES (Responsividade) */
@@ -463,14 +455,26 @@ footer .footer-links a:hover {
 
 @media (max-width: 768px) {
   header .navbar {
-    display: none; /* Esconder a nav bar em telas menores se você não tiver um menu toggle (hamburguer) */
+    display: flex !important; /* MOSTRAR NAV SEMPRE */
+    flex-direction: column;   /* deixa um item por linha */
+    background: var(--white-color);
+    width: 100%;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  header .navbar a {
+    padding: 1rem 0;
+    font-size: 1.9rem;
+  
+} /* Esconder a nav bar em telas menores se você não tiver um menu toggle (hamburguer) */
   }
   .home .container h1 {
     font-size: 4rem;
   }
   header .time-display {
     font-size: 1.2rem;
-  }
+  
 }
 
 @media (max-width: 450px) {

@@ -414,7 +414,12 @@
           <label for="dataAgendamento">Data</label>
           <input type="date" id="dataAgendamento" name="data" required />
           <label for="horaAgendamento">Horário</label>
-          <input type="time" id="horaAgendamento" name="hora" required />
+<select id="horaAgendamento" name="hora" class="form-control" required>
+    <!-- As opções serão preenchidas via JS -->
+</select>
+<div class="invalid-feedback">
+    Escolha um horário entre 09:00 e 21:00.
+</div>
 
           <button type="submit" class="btn">Enviar Cadastro</button>
         </form>

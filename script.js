@@ -1,11 +1,9 @@
 // =======================================================
-// 1. FUNÇÃO TEMPORAL: Exibir data e hora dinamicamente
+// 1. EXIBIR DATA E HORA ATUAL
 // =======================================================
 function atualizarHora() {
-    // Cria um novo objeto Date
     const agora = new Date();
 
-    // Opções de formatação para a data e hora
     const opcoes = {
         year: 'numeric',
         month: '2-digit',
@@ -13,55 +11,100 @@ function atualizarHora() {
         hour: '2-digit',
         minute: '2-digit',
         second: '2-digit',
-        hour12: false // Formato 24h
+        hour12: false
     };
 
-    // Formata a data e hora
     const dataHoraFormatada = agora.toLocaleDateString('pt-BR', opcoes);
 
-    // Atualiza o conteúdo do elemento HTML
     const elementoHora = document.getElementById('horaAtual');
     if (elementoHora) {
         elementoHora.textContent = dataHoraFormatada;
     }
 }
 
-// Chama a função imediatamente para carregar a hora ao iniciar
 atualizarHora();
-
-// Configura a função para ser chamada a cada 1 segundo (função temporal)
 setInterval(atualizarHora, 1000);
 
 
 // =======================================================
-// 2. VALIDAÇÃO DE FORMULÁRIO (Usando a validação nativa do Bootstrap)
+// 2. POPULAR HORÁRIOS — APENAS 09:00 A 21:00
+// =======================================================
+function carregarHorarios() {
+    const select = document.getElementById("horaAgendamento");
+    if (!select) return;
+
+    select.innerHTML = ""; // limpar as opções
+
+    for (let h = 9; h <= 21; h++) {
+        let horaFormatada = String(h).padStart(2, '0') + ":00";
+        let option = document.createElement("option");
+
+        option.value = horaFormatada;
+        option.textContent = horaFormatada;
+
+        select.appendChild(option);
+    }
+}
+
+carregarHorarios();
+
+
+// =======================================================
+// 3. VALIDAÇÃO COMPLETA DO FORMULÁRIO
 // =======================================================
 (function () {
-  'use strict'
+    'use strict';
 
-  // Busca o formulário que queremos validar
-  const form = document.getElementById('cadastroForm');
-  
-  // Adiciona um listener para o evento de submit
-  if (form) {
+    const form = document.getElementById('cadastroForm');
+
+    if (!form) return;
+
     form.addEventListener('submit', function (event) {
-        
-      // Verifica se o formulário é válido (inclui campos required, email, number min/max)
-      if (!form.checkValidity()) {
-        event.preventDefault(); // Impede o envio do formulário
-        event.stopPropagation(); // Impede a propagação do evento
-        
-        // Exibe um alerta simples em JavaScript para reforçar a interatividade
-        alert('Por favor, preencha todos os campos obrigatórios corretamente para continuar com o agendamento.');
-        
-      } else {
-          // Se o formulário for válido, exibe uma mensagem de sucesso
-          alert('Cadastro e Agendamento enviados com sucesso! Entraremos em contato em breve.');
-          // Neste ponto, você enviaria os dados para um servidor (Backend)
-      }
 
-      // Adiciona a classe de validação do Bootstrap para mostrar o feedback visual
-      form.classList.add('was-validated');
-    }, false);
-  }
-})()
+        // 3.1 VALIDAR CPF — exatamente 11 números
+        const cpfInput = document.getElementById('cpfCliente');
+        if (cpfInput) {
+            const cpf = cpfInput.value.replace(/\D/g, "");
+            if (cpf.length !== 11) {
+                event.preventDefault();
+                event.stopPropagation();
+                alert("Digite um CPF válido com 11 números.");
+                return;
+            }
+        }
+
+        // 3.2 VALIDAR EMAIL
+        const emailInput = document.getElementById('emailCliente');
+        if (emailInput) {
+            const email = emailInput.value.trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailRegex.test(email)) {
+                event.preventDefault();
+                event.stopPropagation();
+                alert("Digite um e-mail válido.");
+                return;
+            }
+        }
+
+        // 3.3 VALIDAR HORÁRIO SELECIONADO
+        const hora = document.getElementById("horaAgendamento").value;
+        if (!hora || Number(hora.split(":")[0]) < 9 || Number(hora.split(":")[0]) > 21) {
+            event.preventDefault();
+            event.stopPropagation();
+            alert("Escolha um horário válido entre 09:00 e 21:00.");
+            return;
+        }
+
+        // 3.4 VALIDAÇÃO PADRÃO DO BOOTSTRAP
+        if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+            alert("Preencha todos os campos obrigatórios.");
+        } else {
+            alert("Cadastro e agendamento enviados com sucesso!");
+        }
+
+        form.classList.add('was-validated');
+    });
+})();

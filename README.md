@@ -42,7 +42,7 @@ Bem-vindo ao **PetShop HappyPaws**, um site desenvolvido como projeto da discipl
 ## ⚙️ Tecnologias Utilizadas
 
 - **HTML5**: Estrutura do site
-- **CSS3 / Bootstrap 5**: Estilização e carrossel
+- **CSS3 / Bootstrap 5**: Estilização, carrossel e responsividade.
 - **JavaScript**: Função de atualização da hora e validação de formulário
 - **Git & GitHub**: Versionamento do código
 - **GitHub Pages**: Hospedagem do site

@@ -5,8 +5,8 @@
   --white-color: #ffffff;
   --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
 
-  --accent-orange: #d8830b; /* laranja principal */
-  --accent-orange-dark: #c3700a; /* laranja escuro para hover */
+  --accent-orange: #d8670b; /* laranja principal */
+  --accent-orange-dark: #d8670b; /* laranja escuro para hover */
 }
 
 * {
@@ -231,13 +231,13 @@ header .time-display {
 /* Botão (Para garantir a cor amarela/laranja do seu modelo) */
 /* O seu botão .btn padrão é azul, vamos sobrescrever apenas nesta seção se necessário, mas o código original está como primary-color */
 .category .service-card .btn {
-  background-color: #d8830b;
+  background-color: #d8670b;
   color: var(--white-color);
   font-weight: 600;
   padding: 1rem 3rem;
 }
 .category .service-card .btn:hover {
-  background-color: #c3700a;
+  background-color: #d8670b;
 }
 /* FIM DOS ESTILOS DOS CARDS DE SERVIÇO */
 
